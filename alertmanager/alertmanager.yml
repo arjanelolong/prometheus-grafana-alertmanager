@@ -1,0 +1,12 @@
+global:
+  slack_api_url: '<slack_webhook_url>'
+
+route:
+  receiver: 'slack-notifications'
+  group_by: ['...']
+
+receivers:
+  - name: 'slack-notifications'
+    slack_configs:
+      - send_resolved: true
+        text: '<!channel> description: {{ .CommonAnnotations.description }}'
