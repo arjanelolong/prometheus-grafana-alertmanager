@@ -4,6 +4,8 @@ global:
 route:
   receiver: 'slack-notifications'
   group_by: ['...']
+  group_interval: 30s
+  repeat_interval: 30s
 
 receivers:
   - name: 'slack-notifications'
